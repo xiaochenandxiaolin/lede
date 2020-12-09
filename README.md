@@ -1,4 +1,6 @@
-
+源码来源
+-
+foke from ` https://github.com/coolsnowwolf/lede`,增加对nexx-wt3020(16M)固件的编译。
 中文：如何编译自己需要的 OpenWrt 固件
 -
 注意：
@@ -18,17 +20,16 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
 
 3. 使用 `git clone https://github.com/xiaochenandxiaolin/lede` 命令下载好源代码，然后 `cd lede` 进入目录
 
-4. 使用`vim feeds.conf.default`命令去除`hello word`软件源的注释。
-5. ```bash
+4. ```bash
    ./scripts/feeds update -a
    ./scripts/feeds install -a
    make menuconfig
    ```
   - `make menuconfig`选择需要的软件包和固件
-6. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
+5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
 
-7. 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
+6. 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
 
 二次编译：
 ```bash
@@ -48,8 +49,3 @@ make -j$(($(nproc) + 1)) V=s
 ```
 
 编译完成后输出路径：/lede/bin/targets
-
--
-源码来源
--
-`foke from https://github.com/coolsnowwolf/lede`,增加对nexx16M固件的编译部分。
