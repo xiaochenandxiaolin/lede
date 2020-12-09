@@ -26,7 +26,7 @@ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git
    ./scripts/feeds install -a
    make menuconfig
    ```
-  - `make menuconfig`选择需要的软件包和固件 压缩率修改为1024
+  - `make menuconfig`选择需要的软件包和固件 压缩率修改为1024 可编译科学上网插件
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
 
